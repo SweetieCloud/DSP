@@ -23,8 +23,7 @@ function [yn, yorigin] = multiply_signal(x1n, x1origin, x2n, x2origin)
     
     // 5. Xác định vị trí gốc tọa độ n = 0 trong chuỗi yn
     yorigin = 1 - n_min;
-    
-    // 6. Vẽ đồ thị của x1(n), x2(n) và y(n) trên cùng một cửa sổ figure
+     
     clf();
     
     // --- Subplot 1: Signal x_1(n) ---
@@ -60,7 +59,7 @@ function [yn, yorigin] = multiply_signal(x1n, x1origin, x2n, x2origin)
     e3.children(1).foreground = color('darkgreen');
     e3.children(1).thickness = 3;
     a3 = gca();
-    a3.data_bounds = [n_min, -0.5; n_max, 10]; // Biên độ max = 9 nên đặt trục y tới 10
+    a3.data_bounds = [n_min, -0.5; n_max, 10];  
     xgrid(33);
     title('Multiplication Signal y(n) = x_1(n) . x_2(n)');
     xlabel('n');
