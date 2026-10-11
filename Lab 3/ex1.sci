@@ -9,17 +9,13 @@ function [yn, yorigin] = delay(xn, xorigin, k)
     nx = (1:length(xn)) - xorigin;
     ny = (1:length(yn)) - yorigin;
     
-    // 4. Vẽ đồ thị
     clf();
-    
-    // --- Đồ thị tín hiệu gốc x(n) ---
+     
     subplot(2, 1, 1);
-    plot2d3(nx, xn);
-    // Chỉnh màu đỏ và nét vẽ đậm cho thanh xung
+    plot2d3(nx, xn); 
     e1 = gce();
     e1.children(1).foreground = color('red');
-    e1.children(1).thickness = 3;
-    // Bật ô lưới màu xanh nhạt (cyan)
+    e1.children(1).thickness = 3; 
     xgrid(33);
     title('Discrete-time signal x(n)');
     xlabel('n');
@@ -27,12 +23,10 @@ function [yn, yorigin] = delay(xn, xorigin, k)
     
     // --- Đồ thị tín hiệu trễ y(n) = x(n - k) ---
     subplot(2, 1, 2);
-    plot2d3(ny, yn);
-    // Chỉnh màu xanh dương và nét vẽ đậm cho thanh xung
+    plot2d3(ny, yn); 
     e2 = gce();
     e2.children(1).foreground = color('blue');
-    e2.children(1).thickness = 3;
-    // Bật ô lưới màu xanh nhạt (cyan)
+    e2.children(1).thickness = 3; 
     xgrid(33);
     title(msprintf('Delayed Signal y(n) = x(n - %d)', k));
     xlabel('n');
