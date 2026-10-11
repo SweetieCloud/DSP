@@ -20,9 +20,7 @@ function [yn, yorigin] = add_signal(x1n, x1origin, x2n, x2origin)
     
     // 4. Cộng từng mẫu
     yn = x1_padded + x2_padded;
-    yorigin = 1 - n_min;
-    
-    // 5. Vẽ đồ thị trên cùng trục hoành ny để đồng bộ như hình bạn của bạn
+    yorigin = 1 - n_min; 
     clf();
     
     // --- Subplot 1: Signal x_1(n) ---
@@ -32,7 +30,7 @@ function [yn, yorigin] = add_signal(x1n, x1origin, x2n, x2origin)
     e1.children(1).foreground = color('blue');
     e1.children(1).thickness = 3;
     a1 = gca();
-    a1.data_bounds = [n_min, -2.5; n_max, 3.5]; // Khóa trục y để không bị xén nét
+    a1.data_bounds = [n_min, -2.5; n_max, 3.5];  
     xgrid(33);
     title('Signal x_1(n)');
     xlabel('n');
@@ -45,7 +43,7 @@ function [yn, yorigin] = add_signal(x1n, x1origin, x2n, x2origin)
     e2.children(1).foreground = color('red');
     e2.children(1).thickness = 3;
     a2 = gca();
-    a2.data_bounds = [n_min, -0.5; n_max, 3.5]; // Đảm bảo mức 0 và 1 hiện rõ ràng
+    a2.data_bounds = [n_min, -0.5; n_max, 3.5]; 
     xgrid(33);
     title('Signal x_2(n)');
     xlabel('n');
