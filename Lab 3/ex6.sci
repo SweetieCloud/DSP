@@ -12,9 +12,7 @@ function [yn, yorigin] = convolution_signal(xn, xorigin, hn, horigin)
     
     // 4. Xác định cận trục n chung để đồng bộ tỷ lệ hiển thị trên cả 3 đồ thị
     n_min = min([min(nx), min(nh), min(ny)]);
-    n_max = max([max(nx), max(nh), max(ny)]);
-    
-    // 5. Vẽ đồ thị trên cùng một figure
+    n_max = max([max(nx), max(nh), max(ny)]); 
     clf();
     
     // --- Subplot 1: Signal x(n) ---
