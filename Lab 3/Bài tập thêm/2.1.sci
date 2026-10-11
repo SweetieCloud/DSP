@@ -1,13 +1,6 @@
-// ====================================================================
-// CO2036 - Xử lý tín hiệu số
-// Lab 3 - Bài tập bổ sung 2.1
-// Sinh viên: Bùi Thanh Quí - 2312865
-// ====================================================================
-
 clc;
 clear;
 
-// 0. Đóng các cửa sổ đồ họa cũ an toàn (chỉ đóng nếu đang tồn tại)
 if ~isempty(winsid()) then
     xdel(winsid());
 end
@@ -51,9 +44,7 @@ for i = 1:length(n_common)
         x2(i) = 1;
     end
 end
-
-// 3. Trực quan hóa đồ thị
-scf(0); // Mở/chọn cửa sổ đồ thị ID 0
+scf(0); 
 
 // --- Hình 1: Tín hiệu gốc x(n) ---
 subplot(3, 1, 1);
