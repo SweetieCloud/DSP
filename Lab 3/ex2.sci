@@ -8,18 +8,13 @@ function [yn, yorigin] = advance(xn, xorigin, k)
     // 3. Tạo trục thời gian n cho cả 2 tín hiệu
     nx = (1:length(xn)) - xorigin;
     ny = (1:length(yn)) - yorigin;
-    
-    // 4. Vẽ đồ thị trên cùng một figure
-    clf();
-    
-    // --- Đồ thị tín hiệu gốc x(n) ---
+     
+    clf(); 
     subplot(2, 1, 1);
-    plot2d3(nx, xn);
-    // Chỉnh màu đỏ, thanh xung dày, không dấu chấm
+    plot2d3(nx, xn); 
     e1 = gce();
     e1.children(1).foreground = color('red');
-    e1.children(1).thickness = 3;
-    // Bật lưới màu xanh nhạt
+    e1.children(1).thickness = 3; 
     xgrid(33);
     title('Discrete-time signal x(n)');
     xlabel('n');
@@ -27,12 +22,10 @@ function [yn, yorigin] = advance(xn, xorigin, k)
     
     // --- Đồ thị tín hiệu dịch sớm y(n) = x(n + k) ---
     subplot(2, 1, 2);
-    plot2d3(ny, yn);
-    // Chỉnh màu xanh dương, thanh xung dày, không dấu chấm
+    plot2d3(ny, yn); 
     e2 = gce();
     e2.children(1).foreground = color('blue');
-    e2.children(1).thickness = 3;
-    // Bật lưới màu xanh nhạt
+    e2.children(1).thickness = 3; 
     xgrid(33);
     title(msprintf('Advanced Signal y(n) = x(n + %d)', k));
     xlabel('n');
